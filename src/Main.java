@@ -10,6 +10,7 @@ public class Main {
                 .setName("Антошка")
                 .build();
         System.out.println("У " + mom + " есть сын, " + son);
+        //System.out.println(mom.name,mom.surname,mom.age,mom.address);
 
         try {
             // Не хватает обяхательных полей

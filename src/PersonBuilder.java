@@ -28,13 +28,13 @@ public class PersonBuilder {
     }
 
     public Person build() {
-        if (!name.isEmpty() && !surname.isEmpty()) {
-            if (age<0) {
-                throw new IllegalStateException("Неверное значение поля Возраст");
-            }
+        //if (!this.name.isEmpty() && !this.surname.isEmpty()) {
+           // if (age<0) {
+                //throw new IllegalStateException("Неверное значение поля Возраст");
+           // }
             return new Person(this.name, this.surname, this.age);
-        }  else {
-            throw new IllegalStateException("Не заполнены обязательные поля");
-        }
+       // }  else {
+           // throw new IllegalStateException("Не заполнены обязательные поля");
+       //  }
     }
 }
