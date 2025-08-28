@@ -1,5 +1,3 @@
-import java.util.OptionalInt;
-
 public class PersonBuilder {
 
     public String name;
@@ -18,8 +16,12 @@ public class PersonBuilder {
     }
 
     public PersonBuilder setAge(int age) {
-        this.age = age;
-        return this;
+        if (age<0) {
+            throw new IllegalStateException("Неверное значение поля Возраст");
+        } else {
+            this.age = age;
+            return this;
+        }
     }
 
     public PersonBuilder setAddress(String address) {
@@ -28,13 +30,13 @@ public class PersonBuilder {
     }
 
     public Person build() {
-        //if (!this.name.isEmpty() && !this.surname.isEmpty()) {
-           // if (age<0) {
-                //throw new IllegalStateException("Неверное значение поля Возраст");
-           // }
+        if (name != null && surname != null) {
+//            if (age<0) {
+//                throw new IllegalStateException("Неверное значение поля Возраст");
+//            }
             return new Person(this.name, this.surname, this.age);
-       // }  else {
-           // throw new IllegalStateException("Не заполнены обязательные поля");
-       //  }
+        }  else {
+            throw new IllegalStateException("Не заполнены обязательные поля");
+        }
     }
 }
