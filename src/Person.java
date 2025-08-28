@@ -17,19 +17,40 @@ public class Person {
         this.age = OptionalInt.of(age);
     }
 
-    public boolean hasAge() {return age.isPresent();}
+    public Person(String name, String surname, int age, String address) {
+        this.name = name;
+        this.surname = surname;
+        this.age = OptionalInt.of(age);
+        this.address = address;
+    }
 
-    public boolean hasAddress() {return !address.isEmpty();}
+    public boolean hasAge() {
+        return age.isPresent();
+    }
 
-    public String getName() {return name;}
+    public boolean hasAddress() {
+        return address != null;
+    }
 
-    public String getSurname() {return surname;}
+    public String getName() {
+        return name;
+    }
 
-    public OptionalInt getAge() {return age;}
+    public String getSurname() {
+        return surname;
+    }
 
-    public String getAddress() {return address;}
+    public OptionalInt getAge() {
+        return age;
+    }
 
-    public void setAddress(String address) {this.address = address;}
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
 
     public void happyBirthday() {
         if (age.isPresent()) {
@@ -39,17 +60,16 @@ public class Person {
 
     @Override
     public String toString() {
-        return (getName()+" "+getSurname()+" ("+getAge().getAsInt()+" лет)");
+        return getName();
     }
 
-    @Override
-    public int hashCode() {
-        return 1;
-    }
+//    @Override
+//    public int hashCode() {
+//
+//    }
 
     public PersonBuilder newChildBuilder() {
         return new PersonBuilder()
-                //.setName(String name)
                 .setSurname(this.surname)
                 .setAge(this.age.getAsInt())
                 .setAddress(this.address);

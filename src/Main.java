@@ -6,17 +6,26 @@ public class Main {
                 .setAge(31)
                 .setAddress("Сидней")
                 .build();
-        System.out.println(mom);
-        mom.happyBirthday();
-        System.out.println(mom);
+
+//        ===== ПРОВЕРКА ОБЪЕКТА =====
+//        System.out.println(mom + " " + mom.getSurname() + " (" + mom.getAge().getAsInt() + " лет," + mom.getAddress() + ")");
+//        mom.happyBirthday();
+//        mom.setAddress("Токио");
+//        System.out.println(mom + " " + mom.getSurname() + " (" + mom.getAge().getAsInt() + " лет," + mom.getAddress() + ")");
+//        System.out.println(mom.hasAge());
+//        System.out.println(mom.hasAddress());
+
         Person son = mom.newChildBuilder()
                 .setName("Антошка")
+                .setAge(5)
                 .build();
-        System.out.println(son);
-        son.happyBirthday();
-        System.out.println(son);
+
+//        ===== ПРОВЕРКА ДОЧЕРНЕГО ОБЪЕКТА =====
+//        System.out.println(son + " " + son.getSurname() + " (" + son.getAge().getAsInt() + " лет," + son.getAddress() + ")");
+//        son.happyBirthday();
+//        System.out.println(son + " " + son.getSurname() + " (" + son.getAge().getAsInt() + " лет," + son.getAddress() + ")");
+
         System.out.println("У " + mom + " есть сын, " + son);
-        //System.out.println(mom.name,mom.surname,mom.age,mom.address);
 
         try {
             // Не хватает обязательных полей
