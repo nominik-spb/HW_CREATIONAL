@@ -9,6 +9,7 @@ public class Person {
     public Person(String name, String surname) {
         this.name = name;
         this.surname = surname;
+        this.age = OptionalInt.of(0);
     }
 
     public Person(String name, String surname, int age) {
