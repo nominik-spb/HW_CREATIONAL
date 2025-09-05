@@ -8,22 +8,24 @@ public class Main {
                 .build();
 
 //        ===== ПРОВЕРКА ОБЪЕКТА =====
-//        System.out.println(mom + " " + mom.getSurname() + " (" + mom.getAge().getAsInt() + " лет," + mom.getAddress() + ")");
+//        System.out.println(mom + " " + mom.getSurname() + " (" + mom.getAge() + " лет," + mom.getAddress() + ")");
 //        mom.happyBirthday();
 //        mom.setAddress("Токио");
-//        System.out.println(mom + " " + mom.getSurname() + " (" + mom.getAge().getAsInt() + " лет," + mom.getAddress() + ")");
+//        System.out.println(mom + " " + mom.getSurname() + " (" + mom.getAge() + " лет," + mom.getAddress() + ")");
 //        System.out.println(mom.hasAge());
 //        System.out.println(mom.hasAddress());
 
         Person son = mom.newChildBuilder()
                 .setName("Антошка")
-                .setAge(5)
+                //.setAge(5)
                 .build();
 
+
 //        ===== ПРОВЕРКА ДОЧЕРНЕГО ОБЪЕКТА =====
-//        System.out.println(son + " " + son.getSurname() + " (" + son.getAge().getAsInt() + " лет," + son.getAddress() + ")");
+//        System.out.println(son + " " + son.getSurname() + " (" + son.getAge() + " лет," + son.getAddress() + ")");
 //        son.happyBirthday();
-//        System.out.println(son + " " + son.getSurname() + " (" + son.getAge().getAsInt() + " лет," + son.getAddress() + ")");
+//        System.out.println(son + " " + son.getSurname() + " (" + son.getAge() + " лет," + son.getAddress() + ")");
+
 
         System.out.println("У " + mom + " есть сын, " + son);
 

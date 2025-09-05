@@ -3,19 +3,13 @@ import java.util.OptionalInt;
 public class Person {
     protected final String name;
     protected final String surname;
-    protected OptionalInt age;
+    protected OptionalInt age = OptionalInt.empty();
     protected String address;
 
-    public Person(String name, String surname) {
+    public Person(String name, String surname, String address) {
         this.name = name;
         this.surname = surname;
-        this.age = OptionalInt.of(0);
-    }
-
-    public Person(String name, String surname, int age) {
-        this.name = name;
-        this.surname = surname;
-        this.age = OptionalInt.of(age);
+        this.address = address;
     }
 
     public Person(String name, String surname, int age, String address) {
@@ -54,7 +48,7 @@ public class Person {
     }
 
     public void happyBirthday() {
-        if (age.isPresent()) {
+        if (hasAge()) {
             age = OptionalInt.of(age.getAsInt() + 1);
         }
     }
@@ -72,7 +66,6 @@ public class Person {
     public PersonBuilder newChildBuilder() {
         return new PersonBuilder()
                 .setSurname(this.surname)
-                .setAge(this.age.getAsInt())
                 .setAddress(this.address);
     }
 }
